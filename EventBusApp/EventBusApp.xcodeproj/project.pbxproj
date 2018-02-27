@@ -14,7 +14,6 @@
 		4E05D2E6204595DF00B04497 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E05D2E4204595DF00B04497 /* LaunchScreen.storyboard */; };
 		4E05D2EF2045992C00B04497 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05D2EE2045992C00B04497 /* EventBus.swift */; };
 		4E05D2F120459EE700B04497 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05D2F020459EE700B04497 /* ViewController2.swift */; };
-		908A9336467AD6B3ED7AFE8D /* Pods_EventBusApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57515FB048BBC01C90ADF25 /* Pods_EventBusApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +26,6 @@
 		4E05D2E7204595DF00B04497 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E05D2EE2045992C00B04497 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
 		4E05D2F020459EE700B04497 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		5A9A08D50919F2607086DFAF /* Pods-EventBusApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventBusApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventBusApp/Pods-EventBusApp.debug.xcconfig"; sourceTree = "<group>"; };
-		CFDBF27E557B87C8AE1098F6 /* Pods-EventBusApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventBusApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventBusApp/Pods-EventBusApp.release.xcconfig"; sourceTree = "<group>"; };
-		F57515FB048BBC01C90ADF25 /* Pods_EventBusApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventBusApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				908A9336467AD6B3ED7AFE8D /* Pods_EventBusApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,8 +44,6 @@
 			children = (
 				4E05D2DA204595DF00B04497 /* EventBusApp */,
 				4E05D2D9204595DF00B04497 /* Products */,
-				A696038EE903A17AAC81F0BA /* Pods */,
-				A68C5A72D936321836E00FA1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,23 +78,6 @@
 			path = EventBus;
 			sourceTree = "<group>";
 		};
-		A68C5A72D936321836E00FA1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F57515FB048BBC01C90ADF25 /* Pods_EventBusApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A696038EE903A17AAC81F0BA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5A9A08D50919F2607086DFAF /* Pods-EventBusApp.debug.xcconfig */,
-				CFDBF27E557B87C8AE1098F6 /* Pods-EventBusApp.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,12 +85,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E05D2EA204595DF00B04497 /* Build configuration list for PBXNativeTarget "EventBusApp" */;
 			buildPhases = (
-				A103C7F0360BE3EB8D8ADA13 /* [CP] Check Pods Manifest.lock */,
 				4E05D2D4204595DF00B04497 /* Sources */,
 				4E05D2D5204595DF00B04497 /* Frameworks */,
 				4E05D2D6204595DF00B04497 /* Resources */,
-				E2559EDD47D150CE499F1572 /* [CP] Embed Pods Frameworks */,
-				EF1D798F275804F8F5748523 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,62 +144,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A103C7F0360BE3EB8D8ADA13 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EventBusApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E2559EDD47D150CE499F1572 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EventBusApp/Pods-EventBusApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventBusApp/Pods-EventBusApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF1D798F275804F8F5748523 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventBusApp/Pods-EventBusApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E05D2D4204595DF00B04497 /* Sources */ = {
@@ -371,7 +288,6 @@
 		};
 		4E05D2EB204595DF00B04497 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A9A08D50919F2607086DFAF /* Pods-EventBusApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -387,7 +303,6 @@
 		};
 		4E05D2EC204595DF00B04497 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFDBF27E557B87C8AE1098F6 /* Pods-EventBusApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
