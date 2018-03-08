@@ -14,19 +14,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         eventBus.on(event: { (actions) in
             switch actions {
             case let .Add(a, b):
-                print(a - b)
-            case .Minus:
-                print("Minus")
+                print("[ViewController] \(a + b)")
+            case let .Minus(a, b):
+                print("[ViewController] \(a - b)")
             }
         })
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func clickedPostEventButton(_ sender: Any) {

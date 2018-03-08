@@ -10,7 +10,7 @@ import UIKit
 
 enum Actions: Event {
     case Add(Int, Int)
-    case Minus
+    case Minus(Int, Int)
 }
 
 @UIApplicationMain
@@ -25,28 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         eventBus.on(event: { (actions) in
             switch actions {
             case let .Add(a, b):
-                print(a + b)
-            case .Minus:
-                print("Minus")
+                print("[AppDelegate] \(a + b)")
+            case let .Minus(a, b):
+                print("[AppDelegate] \(a - b)")
             }
         })
         
         return true
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
     }
 
 }

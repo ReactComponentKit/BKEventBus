@@ -8,34 +8,27 @@
 
 import UIKit
 
-// 이벤트버스로 주고 받을 이벤트임을 표시한다.
-// enum에 적용하면 인자가 있는 이벤트를 주고 받고 할 수 있다.
+// Mark as Event
 protocol Event {
     
 }
-
-extension Notification.Name {
-    fileprivate static let NOTIFY_EVENTBUS_POST_EVENT = "NOTIFY_EVENTBUS_POST_EVENT".notificationName
-}
-
-extension String {
-    fileprivate var notificationName: Notification.Name {
-        return Notification.Name(self)
-    }
-}
-
 
 class EventBus<T: Event> {
     
     private typealias EventHandler = (T) -> Void
     private var eventHandler: EventHandler? = nil
     
+    private lazy var eventName: Notification.Name = {
+        let eventTypeName = String(describing: T.self)
+        return Notification.Name("NOTIFY_EVENTBUS_POST_\(eventTypeName)_EVENT")
+    }()
+    
     init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(processNotification(_:)), name: .NOTIFY_EVENTBUS_POST_EVENT, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(processNotification(_:)), name: eventName, object: nil)
     }
     
     @objc private func processNotification(_ notificaton: Notification) {
-        // 같은 이벤트 버스이면 이벤트를 처리하지 않는다.
+        // ignore notification if same eventbus.
         guard let sender = notificaton.object as? EventBus<T>, sender !== self else { return }
         guard let userInfo = notificaton.userInfo else { return }
         guard let event = userInfo["event"] as? T else { return }
@@ -43,7 +36,7 @@ class EventBus<T: Event> {
     }
     
     func post(event: T) {
-        NotificationCenter.default.post(name: .NOTIFY_EVENTBUS_POST_EVENT, object: self, userInfo: [
+        NotificationCenter.default.post(name: eventName, object: self, userInfo: [
             "event": event
         ])
     }
@@ -59,6 +52,6 @@ class EventBus<T: Event> {
     
     deinit {
         eventHandler = nil
-        NotificationCenter.default.removeObserver(self, name: .NOTIFY_EVENTBUS_POST_EVENT, object: nil)
+        NotificationCenter.default.removeObserver(self, name: eventName, object: nil)
     }
 }

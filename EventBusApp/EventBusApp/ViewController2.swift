@@ -11,16 +11,8 @@ import UIKit
 class ViewController2: UIViewController {
     
     private let eventBus: EventBus<Actions> = EventBus()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     @IBAction func clickedPostEvent2Button(_ sender: Any) {
-        eventBus.post(event: Actions.Add(10, 20))
+        eventBus.post(event: Actions.Minus(10, 20))
     }
 }
