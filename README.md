@@ -86,7 +86,7 @@ You can stop or resume event bus with life cycle methods.
 	eventBus.stop()
 ```
 
-Or You can stop event bus by deleting event bus.
+Or You can stop event bus by deleting it.
 
 ```
 // Define Event Bus
