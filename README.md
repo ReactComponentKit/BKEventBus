@@ -105,7 +105,7 @@ eventBus = nil
 
 #### Define Events at Cell
 
-```
+```swift
 class ItemCollectionViewCell: UICollectionViewCell {
     
     // Define Events
