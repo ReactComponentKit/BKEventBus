@@ -64,5 +64,4 @@ extension ListViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return cell
     }
-
 }
