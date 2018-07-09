@@ -9,11 +9,11 @@
 import UIKit
 
 // Mark as Event
-protocol Event {
+protocol EventType {
     
 }
 
-class EventBus<T: Event> {
+class EventBus<T: EventType> {
     
     private typealias EventHandler = (T) -> Void
     private var eventHandler: EventHandler? = nil

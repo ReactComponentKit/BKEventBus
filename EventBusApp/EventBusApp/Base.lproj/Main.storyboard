@@ -1,79 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vdC-wc-CYp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vdC-wc-CYp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EventBusApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="EventBusApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aR-zJ-LZI">
-                                <rect key="frame" x="151" y="318" width="73" height="30"/>
-                                <state key="normal" title="Post Event"/>
-                                <connections>
-                                    <action selector="clickedPostEventButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pxl-hm-Uut"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zW-qP-Z41">
-                                <rect key="frame" x="171" y="187" width="32" height="30"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <segue destination="34q-JW-tyI" kind="show" id="tE1-u3-yK7"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vcn-JB-DLb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fAU-q0-bxp">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1zW-qP-Z41" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="123" id="SMR-Lc-LLF"/>
-                            <constraint firstItem="0aR-zJ-LZI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="efF-cL-kJA"/>
-                            <constraint firstItem="0aR-zJ-LZI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="epD-Q9-wh3"/>
-                            <constraint firstItem="1zW-qP-Z41" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i2M-ZI-S5r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vcn-JB-DLb" secondAttribute="bottom" id="3hq-sO-416"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vcn-JB-DLb" secondAttribute="trailing" id="Dbp-uJ-pQ6"/>
+                            <constraint firstItem="Vcn-JB-DLb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SrT-1t-aDh"/>
+                            <constraint firstItem="Vcn-JB-DLb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kTh-aa-Nlq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="v4a-kl-5ir"/>
+                    <navigationItem key="navigationItem" id="v4a-kl-5ir">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="b8Q-Ed-HQ1">
+                            <connections>
+                                <action selector="clickedAddButtonItem:" destination="BYZ-38-t0r" id="Sjj-ip-h7p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="Vcn-JB-DLb" id="rrR-Oh-PWz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-108" y="-223.53823088455775"/>
         </scene>
-        <!--View Controller2-->
+        <!--Detail View Controller-->
         <scene sceneID="WTe-M0-xwW">
             <objects>
-                <viewController id="34q-JW-tyI" customClass="ViewController2" customModule="EventBusApp" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAk-G5-4FP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="DetailViewController" id="34q-JW-tyI" customClass="DetailViewController" customModule="EventBusApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9sY-Qw-Z4o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pF-KG-w8l">
-                                <rect key="frame" x="144" y="318.5" width="86" height="30"/>
-                                <state key="normal" title="Post Event 2"/>
-                                <connections>
-                                    <action selector="clickedPostEvent2Button:" destination="34q-JW-tyI" eventType="touchUpInside" id="Mi0-Lx-vW8"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-tF-KfJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8pF-KG-w8l" firstAttribute="centerY" secondItem="9sY-Qw-Z4o" secondAttribute="centerY" id="ACr-l8-QBe"/>
-                            <constraint firstItem="8pF-KG-w8l" firstAttribute="centerX" secondItem="9sY-Qw-Z4o" secondAttribute="centerX" id="JOt-K7-ZOE"/>
+                            <constraint firstItem="gIE-tF-KfJ" firstAttribute="top" secondItem="c0s-Ye-PnK" secondAttribute="top" id="Dea-Ma-eTw"/>
+                            <constraint firstItem="c0s-Ye-PnK" firstAttribute="bottom" secondItem="gIE-tF-KfJ" secondAttribute="bottom" id="EBA-72-gFb"/>
+                            <constraint firstItem="c0s-Ye-PnK" firstAttribute="trailing" secondItem="gIE-tF-KfJ" secondAttribute="trailing" id="bzf-ex-3dI"/>
+                            <constraint firstItem="gIE-tF-KfJ" firstAttribute="leading" secondItem="c0s-Ye-PnK" secondAttribute="leading" id="wKF-f4-Uy4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c0s-Ye-PnK"/>
                     </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="gIE-tF-KfJ" id="R92-ST-Fte"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zAk-G5-4FP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="-220.83958020989508"/>
+            <point key="canvasLocation" x="574" y="-224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BB8-zd-BWt">
