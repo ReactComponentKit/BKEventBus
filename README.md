@@ -32,17 +32,17 @@ enum Actions: EventType {
 
 ```swift
 ...
-	let eventBus: EventBus<Actions> = EventBus()
+let eventBus: EventBus<Actions> = EventBus()
 ...
 ```
 
 ### Post Events
 
 ```swift
-	eventBus.post(event: .push(item: "Something"))
-	eventBus.post(event: .pop)
-	eventBus.post(event: .loding(item: "1234"))
-	eventBus.pose(event: .delete(item: "1234"))
+eventBus.post(event: .push(item: "Something"))
+eventBus.post(event: .pop)
+eventBus.post(event: .loding(item: "1234"))
+eventBus.pose(event: .delete(item: "1234"))
 ```
 
 
@@ -50,6 +50,7 @@ enum Actions: EventType {
 
 ```swift
 // Somewhere
+{
 ...
 
 	let eventBus: EventBus<Actions> = EventBus()
@@ -67,7 +68,7 @@ enum Actions: EventType {
 	}
 	
 ...
-
+}
 ```
 
 ## Life cycle
@@ -77,13 +78,13 @@ You can stop or resume event bus with life cycle methods.
 ### Resume EventBus
 
 ```swift
-	eventBus.resume()
+eventBus.resume()
 ```
 
 ### Stop EventBus
 
 ```swift
-	eventBus.stop()
+eventBus.stop()
 ```
 
 Or You can stop event bus by deleting it.
@@ -92,7 +93,7 @@ Or You can stop event bus by deleting it.
 // Define Event Bus
 var eventBus: EventBus<Actions>? = EventBus()
 ...
-	Use it
+Use it
 ...
 
 // Delete it
