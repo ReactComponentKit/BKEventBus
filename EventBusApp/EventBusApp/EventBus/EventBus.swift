@@ -9,11 +9,11 @@
 import UIKit
 
 // Mark as Event
-protocol EventType {
+public protocol EventType {
     
 }
 
-class EventBus<T: EventType> {
+public class EventBus<T: EventType> {
     
     private typealias EventHandler = (T) -> Void
     private var eventHandler: EventHandler? = nil
@@ -23,7 +23,7 @@ class EventBus<T: EventType> {
         return Notification.Name("NOTIFY_EVENTBUS_POST_\(eventTypeName)_EVENT")
     }()
     
-    init() {
+    public init() {
         NotificationCenter.default.addObserver(self, selector: #selector(processNotification(_:)), name: eventName, object: nil)
     }
     
@@ -37,7 +37,7 @@ class EventBus<T: EventType> {
         handle(event: event)
     }
     
-    func post(event: T) {
+    public func post(event: T) {
         NotificationCenter.default.post(name: eventName, object: self, userInfo: [
             "event": event
         ])
@@ -48,15 +48,15 @@ class EventBus<T: EventType> {
         eventHandler(event)
     }
     
-    func on(event: @escaping (T) -> Void) {
+    public func on(event: @escaping (T) -> Void) {
         eventHandler = event
     }
     
-    func resume() {
+    public func resume() {
         isAlive = true
     }
     
-    func stop() {
+    public func stop() {
         isAlive = false
     }
     
