@@ -9,25 +9,27 @@
 import UIKit
 
 // Mark as Event
-protocol Event {
+public protocol EventType {
     
 }
 
-class EventBus<T: Event> {
+public class EventBus<T: EventType> {
     
     private typealias EventHandler = (T) -> Void
     private var eventHandler: EventHandler? = nil
-    
+    private var isAlive: Bool = true
     private lazy var eventName: Notification.Name = {
         let eventTypeName = String(describing: T.self)
         return Notification.Name("NOTIFY_EVENTBUS_POST_\(eventTypeName)_EVENT")
     }()
     
-    init() {
+    public init() {
         NotificationCenter.default.addObserver(self, selector: #selector(processNotification(_:)), name: eventName, object: nil)
     }
     
     @objc private func processNotification(_ notificaton: Notification) {
+        // ignore events if didn't alive
+        guard isAlive == true else { return }
         // ignore notification if same eventbus.
         guard let sender = notificaton.object as? EventBus<T>, sender !== self else { return }
         guard let userInfo = notificaton.userInfo else { return }
@@ -35,7 +37,7 @@ class EventBus<T: Event> {
         handle(event: event)
     }
     
-    func post(event: T) {
+    public func post(event: T) {
         NotificationCenter.default.post(name: eventName, object: self, userInfo: [
             "event": event
         ])
@@ -46,8 +48,16 @@ class EventBus<T: Event> {
         eventHandler(event)
     }
     
-    func on(event: @escaping (T) -> Void) {
+    public func on(event: @escaping (T) -> Void) {
         eventHandler = event
+    }
+    
+    public func resume() {
+        isAlive = true
+    }
+    
+    public func stop() {
+        isAlive = false
     }
     
     deinit {

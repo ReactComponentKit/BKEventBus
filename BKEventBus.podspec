@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.name                  = "BKEventBus"
   s.summary               = "EventBus is tiny, simple typed event bus to communicate between components."
   s.requires_arc          = true
-  s.version               = "1.0.3"
+  s.version               = "1.0.4"
   s.license               = { :type => "MIT", :file => "LICENSE" }
   s.author                = { "Burt.K" => "skyfe79@gmail.com" }
   s.homepage              = "https://github.com/skyfe79/EventBus"
