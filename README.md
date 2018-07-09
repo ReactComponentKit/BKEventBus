@@ -101,7 +101,7 @@ eventBus = nil
 
 ## Simple Example
 
-### Commumicate between cells and ViewController.
+### Commumicate between CollectionViewCell and ViewController.
 
 #### Define Events at Cell
 
