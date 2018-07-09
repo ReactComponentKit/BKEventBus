@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
  
   s.platform              = :ios
   s.ios.deployment_target = '8.0'
-  s.name                  = "EventBus"
+  s.name                  = "Swift.EventBus"
   s.summary               = "EventBus is tiny, simple typed event bus to communicate between components."
   s.requires_arc          = true
   s.version               = "1.0.0"
