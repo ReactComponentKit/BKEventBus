@@ -17,7 +17,7 @@ class EventBus<T: Event> {
     
     private typealias EventHandler = (T) -> Void
     private var eventHandler: EventHandler? = nil
-    
+    private var isAlive: Bool = true
     private lazy var eventName: Notification.Name = {
         let eventTypeName = String(describing: T.self)
         return Notification.Name("NOTIFY_EVENTBUS_POST_\(eventTypeName)_EVENT")
@@ -28,6 +28,8 @@ class EventBus<T: Event> {
     }
     
     @objc private func processNotification(_ notificaton: Notification) {
+        // ignore events if didn't alive
+        guard isAlive == true else { return }
         // ignore notification if same eventbus.
         guard let sender = notificaton.object as? EventBus<T>, sender !== self else { return }
         guard let userInfo = notificaton.userInfo else { return }
@@ -48,6 +50,14 @@ class EventBus<T: Event> {
     
     func on(event: @escaping (T) -> Void) {
         eventHandler = event
+    }
+    
+    func resume() {
+        isAlive = true
+    }
+    
+    func stop() {
+        isAlive = false
     }
     
     deinit {
