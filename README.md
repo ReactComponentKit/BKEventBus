@@ -19,7 +19,7 @@ If you want to remove dependencies between components or layers, you'd better to
 You can define event type using EventType protocol. It is just marking as event type. You can use every types like as class, struct or enum. I prefer to use enum :) You can define events like as below:
 
 
-```
+```swift
 enum Actions: EventType {
 	case push(item: String)
 	case pop
@@ -30,7 +30,7 @@ enum Actions: EventType {
 
 ### Make Event Poster
 
-```
+```swift
 ...
 	let eventBus: EventBus<Actions> = EventBus()
 ...
@@ -38,7 +38,7 @@ enum Actions: EventType {
 
 ### Post Events
 
-```
+```swift
 	eventBus.post(event: .push(item: "Something"))
 	eventBus.post(event: .pop)
 	eventBus.post(event: .loding(item: "1234"))
@@ -48,7 +48,7 @@ enum Actions: EventType {
 
 ### Subscribe Events
 
-```
+```swift
 // Somewhere
 ...
 
@@ -76,19 +76,19 @@ You can stop or resume event bus with life cycle methods.
 
 ### Resume EventBus
 
-```
+```swift
 	eventBus.resume()
 ```
 
 ### Stop EventBus
 
-```
+```swift
 	eventBus.stop()
 ```
 
 Or You can stop event bus by deleting it.
 
-```
+```swift
 // Define Event Bus
 var eventBus: EventBus<Actions>? = EventBus()
 ...
@@ -154,7 +154,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
 #### Subscribe events on ViewController
 
-```
+```swift
 import UIKit
 
 class ListViewController: UIViewController {
