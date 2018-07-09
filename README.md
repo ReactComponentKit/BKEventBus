@@ -5,7 +5,7 @@ EventBus is tiny, simple typed event bus to communicate between components. It i
 ## How to install
 
 ```
-pod 'EventBus'
+pod 'BKEventBus'
 ```
 
 ## Why Use EventBus?
