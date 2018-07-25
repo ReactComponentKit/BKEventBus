@@ -11,7 +11,7 @@ import UIKit
 // Token for targeting
 public struct Token: Equatable {
     private let token: String
-    init() {
+    public init() {
         token = UUID().uuidString
     }
 }
