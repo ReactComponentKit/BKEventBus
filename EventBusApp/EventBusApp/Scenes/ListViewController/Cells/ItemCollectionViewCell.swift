@@ -33,7 +33,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
         eventBus = nil
     }
     
-    func configure(item: String, indexPath: IndexPath, token: Token?) {
+    func configure(item: String, indexPath: IndexPath, token: Token? = nil) {
         self.dateLabel.text = item
         self.indexPath = indexPath
         eventBus = EventBus(token: token)
