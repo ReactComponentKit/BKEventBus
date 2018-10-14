@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventBus
 
 class ListViewController: UIViewController {
     

@@ -11,12 +11,39 @@
 		4E05D2E1204595DF00B04497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E05D2DF204595DF00B04497 /* Main.storyboard */; };
 		4E05D2E3204595DF00B04497 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E05D2E2204595DF00B04497 /* Assets.xcassets */; };
 		4E05D2E6204595DF00B04497 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E05D2E4204595DF00B04497 /* LaunchScreen.storyboard */; };
-		4E05D2EF2045992C00B04497 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05D2EE2045992C00B04497 /* EventBus.swift */; };
 		4E641D8D20F39DBF008DA927 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E641D8C20F39DBF008DA927 /* ListViewController.swift */; };
 		4E641D9020F39E20008DA927 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E641D8E20F39E20008DA927 /* ItemCollectionViewCell.swift */; };
 		4E641D9120F39E20008DA927 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E641D8F20F39E20008DA927 /* ItemCollectionViewCell.xib */; };
 		4E641D9420F3A7A2008DA927 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E641D9320F3A7A2008DA927 /* DetailViewController.swift */; };
+		4ED23454217396D50098FA74 /* EventBus.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ED23452217396D50098FA74 /* EventBus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4ED23457217396D50098FA74 /* EventBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ED23450217396D40098FA74 /* EventBus.framework */; };
+		4ED23458217396D50098FA74 /* EventBus.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4ED23450217396D40098FA74 /* EventBus.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4ED2345D217396DC0098FA74 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05D2EE2045992C00B04497 /* EventBus.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ED23455217396D50098FA74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E05D2D0204595DF00B04497 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ED2344F217396D40098FA74;
+			remoteInfo = EventBus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4ED2345C217396D50098FA74 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4ED23458217396D50098FA74 /* EventBus.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4E05D2D8204595DF00B04497 /* EventBusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventBusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,10 +57,21 @@
 		4E641D8E20F39E20008DA927 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E641D8F20F39E20008DA927 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		4E641D9320F3A7A2008DA927 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4ED23450217396D40098FA74 /* EventBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EventBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED23452217396D50098FA74 /* EventBus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventBus.h; sourceTree = "<group>"; };
+		4ED23453217396D50098FA74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4E05D2D5204595DF00B04497 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED23457217396D50098FA74 /* EventBus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ED2344D217396D40098FA74 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				4E05D2DA204595DF00B04497 /* EventBusApp */,
+				4ED23451217396D40098FA74 /* EventBus */,
 				4E05D2D9204595DF00B04497 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				4E05D2D8204595DF00B04497 /* EventBusApp.app */,
+				4ED23450217396D40098FA74 /* EventBus.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				4E641D8920F39D86008DA927 /* Scenes */,
-				4E05D2ED2045990300B04497 /* EventBus */,
 				4E05D2DB204595DF00B04497 /* AppDelegate.swift */,
 				4E05D2DF204595DF00B04497 /* Main.storyboard */,
 				4E05D2E2204595DF00B04497 /* Assets.xcassets */,
@@ -71,14 +110,6 @@
 				4E05D2E7204595DF00B04497 /* Info.plist */,
 			);
 			path = EventBusApp;
-			sourceTree = "<group>";
-		};
-		4E05D2ED2045990300B04497 /* EventBus */ = {
-			isa = PBXGroup;
-			children = (
-				4E05D2EE2045992C00B04497 /* EventBus.swift */,
-			);
-			path = EventBus;
 			sourceTree = "<group>";
 		};
 		4E641D8920F39D86008DA927 /* Scenes */ = {
@@ -116,7 +147,28 @@
 			path = DetailViewController;
 			sourceTree = "<group>";
 		};
+		4ED23451217396D40098FA74 /* EventBus */ = {
+			isa = PBXGroup;
+			children = (
+				4E05D2EE2045992C00B04497 /* EventBus.swift */,
+				4ED23452217396D50098FA74 /* EventBus.h */,
+				4ED23453217396D50098FA74 /* Info.plist */,
+			);
+			path = EventBus;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4ED2344B217396D40098FA74 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED23454217396D50098FA74 /* EventBus.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4E05D2D7204595DF00B04497 /* EventBusApp */ = {
@@ -126,15 +178,35 @@
 				4E05D2D4204595DF00B04497 /* Sources */,
 				4E05D2D5204595DF00B04497 /* Frameworks */,
 				4E05D2D6204595DF00B04497 /* Resources */,
+				4ED2345C217396D50098FA74 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4ED23456217396D50098FA74 /* PBXTargetDependency */,
 			);
 			name = EventBusApp;
 			productName = EventBusApp;
 			productReference = 4E05D2D8204595DF00B04497 /* EventBusApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4ED2344F217396D40098FA74 /* EventBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ED23459217396D50098FA74 /* Build configuration list for PBXNativeTarget "EventBus" */;
+			buildPhases = (
+				4ED2344B217396D40098FA74 /* Headers */,
+				4ED2344C217396D40098FA74 /* Sources */,
+				4ED2344D217396D40098FA74 /* Frameworks */,
+				4ED2344E217396D40098FA74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EventBus;
+			productName = EventBus;
+			productReference = 4ED23450217396D40098FA74 /* EventBus.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -148,6 +220,10 @@
 				TargetAttributes = {
 					4E05D2D7204595DF00B04497 = {
 						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					4ED2344F217396D40098FA74 = {
+						CreatedOnToolsVersion = 10.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -166,6 +242,7 @@
 			projectRoot = "";
 			targets = (
 				4E05D2D7204595DF00B04497 /* EventBusApp */,
+				4ED2344F217396D40098FA74 /* EventBus */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +259,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4ED2344E217396D40098FA74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -189,7 +273,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E05D2EF2045992C00B04497 /* EventBus.swift in Sources */,
 				4E641D9020F39E20008DA927 /* ItemCollectionViewCell.swift in Sources */,
 				4E641D9420F3A7A2008DA927 /* DetailViewController.swift in Sources */,
 				4E05D2DC204595DF00B04497 /* AppDelegate.swift in Sources */,
@@ -197,7 +280,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4ED2344C217396D40098FA74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ED2345D217396DC0098FA74 /* EventBus.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ED23456217396D50098FA74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ED2344F217396D40098FA74 /* EventBus */;
+			targetProxy = 4ED23455217396D50098FA74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E05D2DF204595DF00B04497 /* Main.storyboard */ = {
@@ -331,6 +430,7 @@
 		4E05D2EB204595DF00B04497 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F2YX27TG52;
@@ -346,6 +446,7 @@
 		4E05D2EC204595DF00B04497 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F2YX27TG52;
@@ -355,6 +456,65 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4ED2345A217396D50098FA74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F2YX27TG52;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EventBus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.skyfe79.EventBus;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4ED2345B217396D50098FA74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F2YX27TG52;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EventBus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.skyfe79.EventBus;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -375,6 +535,15 @@
 			buildConfigurations = (
 				4E05D2EB204595DF00B04497 /* Debug */,
 				4E05D2EC204595DF00B04497 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ED23459217396D50098FA74 /* Build configuration list for PBXNativeTarget "EventBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ED2345A217396D50098FA74 /* Debug */,
+				4ED2345B217396D50098FA74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
